@@ -1,0 +1,98 @@
+@use './var' as *;
+@use './mixins' as *;
+/*--------------------------------------------------------------
+   Testimonials
+--------------------------------------------------------------*/
+
+.testimonials {
+  padding: 112px 0 108px 0;
+  background: $secondary-color;
+
+  .section-title {
+    span {
+      color: $white;
+    }
+  }
+
+  &__item {
+    display: flex;
+    @include media-breakpoint-down("md") {
+      display: block;
+    }
+  }
+
+  &__text {
+    display: grid;
+    place-content: center;
+    padding: 0 2rem;
+    color: $white;
+  }
+
+  &__desc {
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 48px;
+    margin-bottom: 40px;
+
+    @include media-breakpoint-down("md") {
+      font-size: 24px;
+      line-height: 36px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__person {
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    @include media-breakpoint-down("md") {
+      font-size: 24px;
+    }
+  }
+
+  .owl-nav {
+    button {
+      outline: none;
+    }
+    > * {
+      margin-right: 15px;
+    }
+    margin: -50px 0 0 45%;
+    position: relative;
+
+    @include media-breakpoint-down("sm") {
+      margin: 0;
+      text-align: center;
+    }
+    span {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      padding-top: 5px;
+      border: 1px solid #0c2440;
+      display: inline-block;
+      color: #0c2440;
+      transition: 0.3s ease;
+      font-size: 24px;
+
+      &:hover {
+        background: $primary-color;
+        color: $white;
+      }
+    }
+  }
+}
+
+// button.owl-prev span {
+//   /* background: #0c2440; */
+//   /* padding: 6px; */
+//   color: #fff;
+//   /* border-radius: 50%; */
+//   width: 30px;
+//   height: 30px;
+//   display: inline-block;
+//   border-radius: 50%;
+//   padding-top: 1px;
+//   border: 1px solid #0c2440;
+//   /* font-size: 16px; */
+// }

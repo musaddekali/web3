@@ -1,0 +1,155 @@
+@use './var' as *;
+@use './mixins' as *;
+
+/*--------------------------------------------------------------
+   Footer
+--------------------------------------------------------------*/
+.footer {
+  background: $primary-color;
+
+  &-newsletter {
+    background: darken($primary-color, 5);
+    padding: 58px 0;
+
+    &__title {
+      font-size: 40px;
+      font-weight: 500;
+      margin-bottom: 12px;
+      color: $white;
+    }
+
+    &__para {
+      font-style: 18px;
+      margin-bottom: 0;
+      color: #f2f2f2;
+    }
+
+    form {
+      text-align: right;
+      font-size: 16px;
+      position: relative;
+      @include media-breakpoint-down("md") {
+        text-align: center;
+      }
+    }
+
+    &__email {
+      border: 1px solid #e2e2e2;
+      padding: 23px 108px 23px 23px;
+      outline: none;
+      border-radius: 4px 35px 35px 4px;
+      background: transparent;
+      width: 80%;
+      color: $white;
+
+      &::placeholder {
+        color: $white;
+        opacity: 0.7;
+      }
+
+      @include media-breakpoint-down("md") {
+        width: 100%;
+      }
+    }
+
+    &__submit-btn {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      padding: 23px 23px 23px 27px;
+      border: 1px solid $secondary-color;
+      background: $secondary-color;
+      border-radius: 0px 4px 4px 0px;
+      color: $white;
+      @include transition-ease;
+
+      &:hover {
+        background: darken($secondary-color, 10);
+      }
+    }
+  }
+
+  &-main {
+    padding: 120px 0 30px 0;
+    .row .row > * {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__logo {
+    display: block;
+    margin-bottom: 32px;
+  }
+
+  &__socials {
+    margin-bottom: 48px;
+
+    a {
+      display: inline-block;
+      &:not(:last-child) {
+        margin-right: 40px;
+      }
+    }
+
+    img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 36px;
+    color: $white;
+  }
+
+  &__contact {
+    border: 3px solid hsl(213, 19%, 36%);
+    padding: 35px;
+    margin: 24px 0 0;
+    overflow: auto;
+    p {
+      color: $white;
+      line-height: 25.6px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__links-item {
+    padding: 12px 0;
+    line-height: 25.6px;
+
+    &:first-child {
+      padding-top: 0;
+    }
+  }
+
+  &__link {
+    font-size: 18px;
+    display: inline-block;
+    color: #f2f2f2;
+    @include transition-ease;
+
+    &:hover {
+      color: $white;
+    }
+  }
+
+  &__hr {
+    margin: 0;
+    background: lighten($primary-color, 60);
+  }
+
+  &__copyright {
+    padding: 40px 0;
+  }
+
+  &__copyright-text {
+    color: #d1d1d1;
+    text-align: center;
+    margin-bottom: 0;
+    line-height: 25.6px;
+  }
+}

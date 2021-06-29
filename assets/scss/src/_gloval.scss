@@ -1,0 +1,33 @@
+@use './var' as *;
+@use './mixins' as *;
+/* Global Style */
+section {
+  padding: 55px 0;
+
+  @at-root {
+    .section-title {
+      text-align: center;
+      padding-bottom: 80px;
+
+      h2 {
+        font-size: 56px;
+        font-weight: 600;
+        margin-bottom: 30px;
+
+        @include media-breakpoint-down('sm') {
+          font-size: 50px;
+        }
+      }
+
+      span{
+          color: $secondary-color;
+      }
+    }
+  }
+}
+.wrapper{
+  overflow-x: hidden;
+}
+.main{
+  margin-top: 30px;
+}

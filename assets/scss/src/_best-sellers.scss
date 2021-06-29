@@ -1,0 +1,115 @@
+@use './var' as *;
+@use './mixins' as *;
+/*--------------------------------------------------------------
+   Best Sellers
+--------------------------------------------------------------*/
+.best-sellers {
+  background: url("../imgs/dog-foot-print.png");
+  background-repeat: no-repeat;
+  background-position: top right;
+
+  &__header {
+    text-align: center;
+    margin-bottom: 34px;
+  }
+
+  &__title {
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 12px;
+
+    // @include media-breakpoint-down('lg') {
+    //   font-size: 2rem;
+    // }
+  }
+
+  &__subtitle {
+    font-size: 18px;
+  }
+
+  &__img {
+    text-align: center;
+    position: relative;
+    padding-bottom: 3.875rem;
+
+    img {
+      position: relative;
+      height: 18.75rem;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 4.5rem;
+      left: 10px;
+      right: 10px;
+      bottom: 0;
+      background: hsl(0, 0%, 94%);
+    }
+  }
+
+  &__content {
+    padding: 24px 30px;
+  }
+
+  &__info-items {
+    margin-bottom: 0.5rem;
+  }
+
+  &__info-item {
+    padding: 0.25rem 0 0.25rem 1.25rem;
+    color: $primary-color;
+    position: relative;
+
+    &::before {
+      content: "";
+      background: url("../imgs/dog-foot-print.svg");
+      background-position: center;
+      background-size: initial;
+      background-repeat: no-repeat;
+      width: 20px;
+      height: 20px;
+      display: block;
+      position: absolute;
+      left: -0.5rem;
+    }
+  }
+
+  &__footer {
+    margin-top: auto;
+  }
+
+  &__price {
+    font-size: 40px;
+    font-weight: 600;
+    padding-left: 30px;
+    margin-bottom: 30px;
+    color: $secondary-color;
+    @include media-breakpoint-down('sm') {
+      font-size: 36px;
+    }
+
+    &--nah {
+      color: $primary-color;
+      text-decoration: line-through;
+    }
+  }
+
+  &__cta {
+    a {
+      padding: 15px 57px;
+      background: #0c2440;
+      font-size: 20px;
+      font-weight: 500;
+      color: #fff;
+      line-height: 30px;
+      border-radius: 10px;
+      @include transition-ease;
+
+      &:hover {
+        background: lighten($primary-color, 10);
+        color: $white;
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+@use './var' as *;
+@use './mixins' as *;
+
+/*--------------------------------------------------------------
+   Story
+--------------------------------------------------------------*/
+.story {
+  background: url("../imgs/bond.png"), url("../imgs/dog-foot-print.png");
+  background-repeat: no-repeat;
+  background-position: top center, right bottom;
+
+  &__title {
+    font-size: 32px;
+    margin-bottom: 32px;
+  }
+  &__info {
+    p {
+      font-size: 18px;
+      line-height: 32px;
+      margin-bottom: 48px;
+    }
+  }
+
+  &__cta {
+    background: $primary-color;
+    color: $white;
+    padding: 18px 42px;
+    line-height:1;
+    border-radius: 10px;
+    @include transition-ease;
+
+    &:hover {
+      background: lighten($primary-color, 10);
+      color: $white;
+    }
+  }
+}

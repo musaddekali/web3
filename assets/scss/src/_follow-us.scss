@@ -1,0 +1,51 @@
+@use './var' as *;
+@use './mixins' as *;
+
+/*--------------------------------------------------------------
+   Follow Us
+--------------------------------------------------------------*/
+.follow-us {
+
+  .section-title{
+    h4{
+      font-size: 24px;
+      font-weight: 300;
+      line-height: 24px;
+      color: $text-color;
+      a{
+        color: $text-color;
+        text-decoration: underline;
+      }
+    }
+  }
+    &__cards > *{
+        margin-bottom: 1rem;
+    }
+
+  &__card {
+    position: relative;
+
+    &:hover > .follow-us__img-overlay{
+        visibility: visible;
+        opacity: 1;
+    }
+  }
+  &__img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: grid;
+    place-items: center;
+    visibility: hidden;
+    opacity: 0;
+    @include transition-ease;
+  }
+  &__icon {
+    padding: 81px;
+    border: 1px solid $white;
+    border-radius: 50%;
+}
+
+}

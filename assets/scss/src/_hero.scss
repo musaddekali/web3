@@ -1,0 +1,58 @@
+@use './var' as *;
+@use './mixins' as *;
+/*--------------------------------------------------------------
+   Hero
+--------------------------------------------------------------*/
+.hero {
+  background: url("../imgs/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 230px 0;
+  margin-top: 70px;
+  position: relative;
+  @include media-breakpoint-up("xxl") {
+    padding: 500px 0;
+  }
+  @include media-breakpoint-down("lg") {
+    padding: 120px 0;
+  }
+  @include media-breakpoint-down("md") {
+    padding: 150px 0;
+  }
+  @include media-breakpoint-down("sm") {
+    padding: 110px 0;
+  }
+
+  &__title {
+    font-size: 80px;
+    font-weight: 700;
+    color: $white;
+    width: 60%;
+    margin: 0 auto 40px auto;
+    line-height: 88px;
+
+    @include media-breakpoint-down("xl") {
+      width: 70%;
+    }
+    @include media-breakpoint-down("md") {
+      width: 100%;
+      font-size: 50px;
+      line-height: 1.2;
+    }
+  }
+
+  &__cta {
+    background: $secondary-color;
+    color: $white;
+    font-size: 16px;
+    padding: 15px 33px;
+    line-height: 1;
+    @include transition-ease;
+
+    &:hover {
+      background: darken($secondary-color, 10);
+      color: $white;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+@use './var'as *;
+
+// Breakpoint viewport sizes and media queries.
+// form small to big 
+@mixin media-breakpoint-up($size, $breakpoint: $breakpoints-up) {
+    @media (min-width: map-get($breakpoint, $size)) {
+        @content;
+    }
+}
+// from big to small 
+@mixin media-breakpoint-down($size, $breakpoint: $breakpoints-down) {
+    @media (max-width: map-get($breakpoint, $size)) {
+        @content;
+    }
+}
+
+// Transition ease 
+@mixin transition-ease {
+        transition: .3s ease;
+}

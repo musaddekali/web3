@@ -1,0 +1,14 @@
+@use './var' as *;
+@use './mixins' as *;
+/*--------------------------------------------------------------
+   Header
+--------------------------------------------------------------*/
+.header{
+    width: 100vw;
+    padding: 15px 0;
+    background: $white;
+
+    @include media-breakpoint-down('md') {
+        
+    }
+}
